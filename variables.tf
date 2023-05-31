@@ -4,7 +4,7 @@ variable "address_space" {}
 
 variable "rg" {
   type = object({
-    name = string
+    name     = string
     location = string
   })
 }
