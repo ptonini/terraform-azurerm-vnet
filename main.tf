@@ -1,6 +1,6 @@
 resource "azurerm_virtual_network" "this" {
   name                = var.name
-  address_space       = [var.address_space]
+  address_space       = var.address_space
   location            = var.rg.location
   resource_group_name = var.rg.name
   dns_servers         = var.dns_servers
@@ -18,4 +18,3 @@ resource "azurerm_virtual_network_peering" "this" {
   virtual_network_name      = azurerm_virtual_network.this.name
   remote_virtual_network_id = each.value["id"]
 }
-

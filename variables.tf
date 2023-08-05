@@ -1,4 +1,7 @@
-variable "name" {}
+variable "name" {
+  type    = string
+  default = null
+}
 
 variable "address_space" {}
 
