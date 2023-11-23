@@ -6,10 +6,11 @@ resource "azurerm_virtual_network" "this" {
   dns_servers         = var.dns_servers
   lifecycle {
     ignore_changes = [
-      tags.business_unit,
-      tags.environment,
-      tags.product,
-      tags.subscription_type
+      tags["business_unit"],
+      tags["environment"],
+      tags["product"],
+      tags["subscription_type"],
+      tags["environment_finops"]
     ]
   }
 }
@@ -22,4 +23,5 @@ resource "azurerm_virtual_network_peering" "this" {
   remote_virtual_network_id = each.value["id"]
   allow_forwarded_traffic   = true
   allow_gateway_transit     = true
+
 }
