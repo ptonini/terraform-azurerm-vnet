@@ -23,5 +23,5 @@ resource "azurerm_virtual_network_peering" "this" {
   remote_virtual_network_id = each.value["id"]
   allow_forwarded_traffic   = true
   allow_gateway_transit     = true
-
+  use_remote_gateways       = var.peering_use_remote_gateways
 }

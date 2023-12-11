@@ -21,3 +21,7 @@ variable "peering_connections" {
 variable "dns_servers" {
   default = []
 }
+
+variable "peering_use_remote_gateways" {
+  default = false
+}
